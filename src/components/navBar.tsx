@@ -7,6 +7,17 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  // NavigationMenuIndicator,
+  NavigationMenuItem,
+  // NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  // navigationMenuTriggerStyle,
+  // NavigationMenuViewport,
+} from "@/components/ui/navigation-menu";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -26,53 +37,93 @@ const Navbar = () => {
           alt="pulse logo"
           className=" w-40"
         />
-        <div className=" hidden lg:flex items-center gap-16">
-          <Link
-            className={clsx(" text-lg", {
-              "text-white font-semibold": activePath === "trade",
-              " text-white/80": activePath !== "trade",
-            })}
-            href={"/trade"}
-          >
-            Trade
-          </Link>
-          <Link
-            className={clsx(" text-lg", {
-              "text-white font-semibold": activePath === "farm",
-              " text-white/80": activePath !== "farm",
-            })}
-            href={"/farm"}
-          >
-            Farm
-          </Link>
-          <Link
-            className={clsx("  text-lg", {
-              "text-white font-semibold": activePath === "burn",
-              " text-white/80": activePath !== "burn",
-            })}
-            href={"/burn"}
-          >
-            Burn
-          </Link>
-          <Link
-            className={clsx("  text-lg", {
-              "text-white font-semibold": activePath === "info",
-              " text-white/80": activePath !== "info",
-            })}
-            href={"/info"}
-          >
-            Info
-          </Link>
-          <Link
-            className={clsx(" text-lg flex items-center gap-2", {
-              "text-white": activePath === "bridge",
-              " text-white/80": activePath !== "bridge",
-            })}
-            href={"/bridge"}
-          >
-            Bridge <LogOut className=" size-4" />
-          </Link>
-        </div>
+        <NavigationMenu>
+          <NavigationMenuList className=" hidden lg:flex items-center gap-16">
+            <NavigationMenuItem>
+              <NavigationMenuTrigger
+                className={clsx(
+                  " text-lg bg-transparent hover:bg-white/10  hover:text-white focus:bg-white/10 focus:text-white data-[state=open]:text-white data-[state=open]:bg-white/10 data-[state=open]:hover:bg-white/10 data-[state=open]:focus:bg-white/10",
+                  {
+                    "text-white font-semibold": activePath === "trade",
+                    " text-white/80": activePath !== "trade",
+                  }
+                )}
+              >
+                Trade
+              </NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <div className="!bg-white/10 py-4 px-3 flex-col flex gap-3 w-52 text-white">
+                  <Link
+                    href="/trade"
+                    className={clsx(" text-lg", {
+                      "text-white font-semibold": activePath === "trade",
+                      " text-white/80": activePath !== "trade",
+                    })}
+                  >
+                    <span>Exchange</span>
+                  </Link>
+                  <Link
+                    className={clsx(" text-lg", {
+                      "text-white font-semibold": activePath === "liquidity",
+                      " text-white/80": activePath !== "liquidity",
+                    })}
+                    href="/liquidity"
+                  >
+                    <span>Liquidity</span>
+                  </Link>
+                </div>
+              </NavigationMenuContent>
+              {/* <Link
+                className={clsx(" text-lg", {
+                  "text-white font-semibold": activePath === "trade",
+                  " text-white/80": activePath !== "trade",
+                })}
+                href={"/trade"}
+              >
+                <NavigationMenuLink>Trade</NavigationMenuLink>
+              </Link> */}
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <Link
+                className={clsx(" text-lg", {
+                  "text-white font-semibold": activePath === "farm",
+                  " text-white/80": activePath !== "farm",
+                })}
+                href={"/farm"}
+              >
+                <span>Farm</span>
+              </Link>
+            </NavigationMenuItem>
+            <Link
+              className={clsx("  text-lg", {
+                "text-white font-semibold": activePath === "burn",
+                " text-white/80": activePath !== "burn",
+              })}
+              href={"/burn"}
+            >
+              Burn
+            </Link>
+            <Link
+              className={clsx("  text-lg", {
+                "text-white font-semibold": activePath === "info",
+                " text-white/80": activePath !== "info",
+              })}
+              href={"/info"}
+            >
+              Info
+            </Link>
+            <Link
+              className={clsx(" text-lg flex items-center gap-2", {
+                "text-white": activePath === "bridge",
+                " text-white/80": activePath !== "bridge",
+              })}
+              href={"/bridge"}
+            >
+              Bridge <LogOut className=" size-4" />
+            </Link>
+          </NavigationMenuList>
+        </NavigationMenu>
       </div>
       <div className=" flex items-center gap-4">
         <Settings className=" size-6 text-white" />

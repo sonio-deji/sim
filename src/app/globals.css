@@ -76,3 +76,28 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+.input-solemn {
+  field-sizing: content;
+}
+
+.thin-scrollbar {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: rgba(92, 92, 92, 0.3) transparent; /* Firefox */
+}
+
+/* WebKit Browsers (Chrome, Edge, Safari) */
+.thin-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.thin-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.thin-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(92, 92, 92, 0.3) ;
+  border-radius: 10px;
+}
