@@ -35,7 +35,7 @@ export default function RootLayout({
       <body className={` ${roboto.className} font antialiased bg-black `}>
         <Navbar />
 
-        {children}
+        <main className=" mx-4">{children}</main>
       </body>
     </html>
   );

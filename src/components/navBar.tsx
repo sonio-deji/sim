@@ -28,46 +28,61 @@ const Navbar = () => {
         />
         <div className=" hidden lg:flex items-center gap-16">
           <Link
-            className={clsx(" text-lg", {
-              "text-white font-semibold": activePath === "trade",
-              " text-white/80": activePath !== "trade",
-            })}
+            className={clsx(
+              " text-lg hover:rounded-lg p-2 hover:bg-[#1A1D20]",
+              {
+                "text-white font-semibold ": activePath === "trade",
+                " text-white/80": activePath !== "trade",
+              }
+            )}
             href={"/trade"}
           >
             Trade
           </Link>
           <Link
-            className={clsx(" text-lg", {
-              "text-white font-semibold": activePath === "farm",
-              " text-white/80": activePath !== "farm",
-            })}
+            className={clsx(
+              " text-lg hover:rounded-lg p-2 hover:bg-[#1A1D20]",
+              {
+                "text-white font-semibold": activePath === "farm",
+                " text-white/80": activePath !== "farm",
+              }
+            )}
             href={"/farm"}
           >
             Farm
           </Link>
           <Link
-            className={clsx("  text-lg", {
-              "text-white font-semibold": activePath === "burn",
-              " text-white/80": activePath !== "burn",
-            })}
+            className={clsx(
+              "  text-lg hover:rounded-lg p-2 hover:bg-[#1A1D20]",
+              {
+                "text-white font-semibold": activePath === "burn",
+                " text-white/80": activePath !== "burn",
+              }
+            )}
             href={"/burn"}
           >
             Burn
           </Link>
           <Link
-            className={clsx("  text-lg", {
-              "text-white font-semibold": activePath === "info",
-              " text-white/80": activePath !== "info",
-            })}
+            className={clsx(
+              "  text-lg hover:rounded-lg p-2 hover:bg-[#1A1D20]",
+              {
+                "text-white font-semibold": activePath === "info",
+                " text-white/80": activePath !== "info",
+              }
+            )}
             href={"/info"}
           >
             Info
           </Link>
           <Link
-            className={clsx(" text-lg flex items-center gap-2", {
-              "text-white": activePath === "bridge",
-              " text-white/80": activePath !== "bridge",
-            })}
+            className={clsx(
+              " hover:rounded-lg p-2 hover:bg-[#1A1D20] text-lg flex items-center gap-2",
+              {
+                "text-white": activePath === "bridge",
+                " text-white/80": activePath !== "bridge",
+              }
+            )}
             href={"/bridge"}
           >
             Bridge <LogOut className=" size-4" />
