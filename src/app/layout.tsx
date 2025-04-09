@@ -16,6 +16,7 @@ import Navbar from "@/components/navBar";
 const roboto = localFont({
   src: "./fonts/roboto.ttf",
   variable: "--robot",
+  display: "swap",
   weight: "100 200 300 400 500 600 700 800 900",
 });
 
@@ -31,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={` ${roboto.variable} antialiased bg-black`}>
+      <body className={` ${roboto.className} font antialiased bg-black `}>
         <Navbar />
 
         {children}

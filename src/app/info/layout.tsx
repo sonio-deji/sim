@@ -7,11 +7,12 @@ export default function InfoLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className=" mt-10 px-10">
+    <div className=" mt-10 px-10 pb-10">
       <VersionNav />
-      <div className=" mt-8">
+      <div className=" my-8">
         <SubNavs />
       </div>
+
       {children}
     </div>
   );
