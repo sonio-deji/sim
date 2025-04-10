@@ -53,7 +53,6 @@ const SelectCoinModal = (props: Props) => {
       <DialogContent className="sm:max-w-[425px] text-[#f2f2f2] bg-[#1a1d20] border-none outline-none">
         <DialogHeader className="mb-6">
           <DialogTitle>Select a Token</DialogTitle>
-    
         </DialogHeader>
         <div>
           <Input
@@ -63,16 +62,24 @@ const SelectCoinModal = (props: Props) => {
             onChange={handleSearch}
           />
           <div className="flex gap-4 my-6 flex-wrap">
-            {
-              tokenResp.tokens.slice(0, 8).map((token, index) => (
-                <div onClick={() => {
-                  if (token.symbol !== props.selectedToken.symbol) {
-                    props.onChange(token);
-                    props.setOpen(false);
-                  }
-                }} key={index} className={clsx("cursor-pointer flex items-center gap-1 relative", {
-                  'cursor-not-allowed': token.symbol === props.selectedToken.symbol
-                })}>
+            {tokenResp.tokens.slice(0, 8).map((token, index) => {
+              return (
+                <div
+                  onClick={() => {
+                    if (token.address !== props.selectedToken.address) {
+                      props.onChange(token);
+                      props.setOpen(false);
+                    }
+                  }}
+                  key={index}
+                  className={clsx(
+                    "cursor-pointer flex items-center gap-1 relative",
+                    {
+                      "cursor-not-allowed":
+                        token.address === props.selectedToken.address,
+                    }
+                  )}
+                >
                   <Image
                     src={token.logoURI}
                     width={30}
@@ -80,22 +87,37 @@ const SelectCoinModal = (props: Props) => {
                     loading="lazy"
                     alt="Token Icon"
                   />
-                  <span className="font-semibold">{token.symbol}</span>
+                  <span
+                    className={clsx("font-semibold", {
+                      "text-white/50":
+                        token.address === props.selectedToken.address,
+                    })}
+                  >
+                    {token.symbol}
+                  </span>
                 </div>
-              ))
-            }
+              );
+            })}
           </div>
           <div className="w-full h-[1px] bg-[#323234] my-6" />
           <div className="h-[350px] overflow-y-scroll space-y-4 thin-scrollbar">
             {filteredTokens.map((token, index) => (
-              <div onClick={() => {
-                if (token.symbol !== props.selectedToken.symbol) {
-                  props.onChange(token);
-                  props.setOpen(false);
-                }
-              }} key={index} className={clsx("flex cursor-pointer items-center gap-1 relative", {
-                'cursor-not-allowed': token.symbol === props.selectedToken.symbol
-              })}>
+              <div
+                onClick={() => {
+                  if (token.address !== props.selectedToken.address) {
+                    props.onChange(token);
+                    props.setOpen(false);
+                  }
+                }}
+                key={index}
+                className={clsx(
+                  "flex cursor-pointer items-center gap-1 relative",
+                  {
+                    "cursor-not-allowed":
+                      token.address === props.selectedToken.address,
+                  }
+                )}
+              >
                 <Image
                   src={token.logoURI}
                   width={30}
@@ -107,7 +129,7 @@ const SelectCoinModal = (props: Props) => {
                   <span
                     className={clsx("font-semibold", {
                       "text-white/50":
-                        token.symbol === props.selectedToken.symbol,
+                        token.address === props.selectedToken.address,
                     })}
                   >
                     {token.symbol}
@@ -115,7 +137,7 @@ const SelectCoinModal = (props: Props) => {
                   <span
                     className={clsx("text-sm text-[#ccc]", {
                       "text-[#ccc]/50":
-                        token.symbol === props.selectedToken.symbol,
+                        token.address === props.selectedToken.address,
                     })}
                   >
                     {token.name}

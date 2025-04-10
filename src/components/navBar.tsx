@@ -22,6 +22,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
+import ConnectWalletButtonWrapper from "./connectWalletWrapper";
 
 const Navbar = () => {
   const pathName = usePathname();
@@ -127,15 +128,17 @@ const Navbar = () => {
       </div>
       <div className=" flex items-center gap-4">
         <Settings className=" size-6 text-white" />
-        <button
-          style={{
-            background:
-              "linear-gradient(45deg, rgb(0, 102, 34), rgb(0, 179, 60))",
-          }}
-          className="  text-white font-bold rounded-lg px-4 py-2 ml-4 hover:bg-green-600 transition duration-200"
-        >
-          Connect Wallet
-        </button>
+        <ConnectWalletButtonWrapper>
+          <button
+            style={{
+              background:
+                "linear-gradient(45deg, rgb(0, 102, 34), rgb(0, 179, 60))",
+            }}
+            className="  text-white font-bold rounded-lg px-4 py-2 ml-4 hover:bg-green-600 transition duration-200"
+          >
+            Connect Wallet
+          </button>
+        </ConnectWalletButtonWrapper>
 
         <HoverCard>
           <HoverCardTrigger>
