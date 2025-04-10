@@ -22,6 +22,14 @@ type Transactions = {
   time: Date;
   tokenAmount2: string;
 };
+type LPS = {
+  lps: string;
+  value: string;
+  token0Amount: string;
+  token1Amount: string;
+  token2Amount: string;
+  lpAmount: string;
+};
 
 export const topTokens: TopTokens[] = [
   {
@@ -124,6 +132,33 @@ export const transactionsColunm: ColumnDef<Transactions>[] = [
     },
   },
 ];
+export const lpsColumn: ColumnDef<LPS>[] = [
+  {
+    accessorKey: "lps",
+    header: "LPS",
+  },
+  {
+    accessorKey: "value",
+    header: "USD VALUE",
+  },
+  {
+    accessorKey: "token0Amount",
+    header: "TOKEN0 AMOUNT",
+  },
+  {
+    accessorKey: "token1Amount",
+    header: "TOKEN1 AMOUNT",
+  },
+  {
+    accessorKey: "token2Amount",
+    header: "TOKEN2 AMOUNT",
+  },
+  {
+    accessorKey: "lpAmount",
+    header: "LP AMOUNT",
+  },
+
+];
 
 export const topPools: TopPools[] = [
   {
@@ -157,4 +192,24 @@ export const transactions: Transactions[] = [
     time: new Date(),
     tokenAmount2: "1000",
   },
+];
+
+export const lps: LPS[] = [
+  {
+    lps: "Swap",
+    value: "$1000",
+    token0Amount: "1000",
+    token1Amount: "1000",
+    token2Amount: "1000",
+    lpAmount: "1000",
+  },
+  {
+    lps: "Swap",
+    value: "$1000",
+    token0Amount: "1000",
+    token1Amount: "1000",
+    token2Amount: "1000",
+    lpAmount: "1000",
+  },
+
 ];

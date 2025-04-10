@@ -38,10 +38,10 @@ export default function RootLayout({
         <ConnectWalletProvider>
           <Navbar />
           <ConnectWalletModal />
-          <div className="max-w-7xl mx-auto">
+          <main className="max-w-7xl mx-auto">
 
           {children}
-          </div>
+          </main>
         </ConnectWalletProvider>
       </body>
     </html>

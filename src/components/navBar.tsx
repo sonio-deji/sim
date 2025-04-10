@@ -30,16 +30,16 @@ const Navbar = () => {
 
   return (
     <div className=" px-4 py-2 flex items-center justify-between">
-      <div className=" text-white flex items-center gap-16  ">
+      <div className=" text-white flex items-center gap-6  ">
         <Image
           src={"/pulselogo.svg"}
-          width={30}
-          height={30}
+          width={130}
+          height={45}
           alt="pulse logo"
-          className=" w-40"
+          className=""
         />
         <NavigationMenu>
-          <NavigationMenuList className=" hidden lg:flex items-center gap-16">
+          <NavigationMenuList className=" hidden lg:flex items-center gap-6">
             <NavigationMenuItem>
               <NavigationMenuTrigger
                 className={clsx(

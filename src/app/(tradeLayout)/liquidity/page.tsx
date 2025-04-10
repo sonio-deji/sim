@@ -250,7 +250,7 @@ const Trade = () => {
           </Tabs>
         )}
       </div>
-      <div>
+      { view === 1 && <div>
         {activeTab === "v1" ? (
           <div className="max-w-[400px] text-center mt-4 bg-[#1a1d20] rounded-[20px] p-6">
             <Image
@@ -283,7 +283,7 @@ const Trade = () => {
             </span>
           </div>
         )}
-      </div>
+      </div>}
     </div>
   );
 };
