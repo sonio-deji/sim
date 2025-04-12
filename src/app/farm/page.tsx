@@ -15,10 +15,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import clsx from "clsx";
 import Link from "next/link";
 import ListView from "./components/listView";
 import { ArrowUpRightFromSquare, ChevronDown } from "lucide-react";
+import ConnectWalletButtonWrapper from "@/components/connectWalletWrapper";
 
 const Page = () => {
   const [viewType, setViewType] = React.useState<"table" | "grid">("table");
@@ -160,7 +160,9 @@ const GridView = () => {
               <div className="flex justify-between mb-3">
                 <div></div>
                 <div>
-                  <span className="font-semibold text-xl mb-2.5">{item.pair}</span>
+                  <span className="font-semibold text-xl mb-2.5">
+                    {item.pair}
+                  </span>
                   <div className="border-2 w-fit border-[#ccc] px-1 ml-auto rounded-lg">
                     <span className="font-semibold text-xs text-[#ccc]">
                       {item.version}
@@ -213,21 +215,25 @@ const GridView = () => {
                     </span>
                   </button>
                 </div>
-                <span className="text-xs font-semibold">{item.pair} STAKED</span>
+                <span className="text-xs font-semibold">
+                  {item.pair} STAKED
+                </span>
               </div>
               <div>
-                <button
-                  style={{
-                    background:
-                      "linear-gradient(45deg, rgb(0, 102, 34), rgb(0, 179, 60))",
-                    boxShadow: "rgba(14, 14, 44, 0.4) 0px -1px 0px 0px inset",
-                  }}
-                  className="h-12 mt-2  w-full group rounded-lg font-semibold px-6 disabled-button"
-                >
-                  <span className="group-disabled:text-[#4d4d4d]">
-                    Connect Wallet
-                  </span>
-                </button>
+                <ConnectWalletButtonWrapper className="w-full">
+                  <button
+                    style={{
+                      background:
+                        "linear-gradient(45deg, rgb(0, 102, 34), rgb(0, 179, 60))",
+                      boxShadow: "rgba(14, 14, 44, 0.4) 0px -1px 0px 0px inset",
+                    }}
+                    className="h-12 mt-2  w-full group rounded-lg font-semibold px-6 disabled-button"
+                  >
+                    <span className="group-disabled:text-[#4d4d4d]">
+                      Connect Wallet
+                    </span>
+                  </button>
+                </ConnectWalletButtonWrapper>
               </div>
             </div>
             <Accordion type="single" collapsible>

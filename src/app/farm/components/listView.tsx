@@ -8,6 +8,7 @@ import {
 import clsx from "clsx";
 import Link from "next/link";
 import { ArrowUpRightFromSquare, ChevronDown, ChevronUp } from "lucide-react";
+import ConnectWalletButtonWrapper from "@/components/connectWalletWrapper";
 
 const ListView = () => {
   return (
@@ -126,18 +127,20 @@ const ListView = () => {
             <div className="flex-1 p-4  border border-[#323234] rounded-2xl">
               <span className="">Start Farming</span>
               <div className="w-full mt-2 flex pb-4 justify-between items-center">
-                <button
-                  style={{
-                    background:
-                      "linear-gradient(45deg, rgb(0, 102, 34), rgb(0, 179, 60))",
-                    boxShadow: "rgba(14, 14, 44, 0.4) 0px -1px 0px 0px inset",
-                  }}
-                  className="h-12 w-full group rounded-lg font-semibold px-6 disabled-button"
-                >
-                  <span className="group-disabled:text-[#4d4d4d]">
-                    Connect Wallet
-                  </span>
-                </button>
+                <ConnectWalletButtonWrapper className="w-full">
+                  <button
+                    style={{
+                      background:
+                        "linear-gradient(45deg, rgb(0, 102, 34), rgb(0, 179, 60))",
+                      boxShadow: "rgba(14, 14, 44, 0.4) 0px -1px 0px 0px inset",
+                    }}
+                    className="h-12 w-full group rounded-lg font-semibold px-6 disabled-button"
+                  >
+                    <span className="group-disabled:text-[#4d4d4d]">
+                      Connect Wallet
+                    </span>
+                  </button>
+                </ConnectWalletButtonWrapper>
               </div>
             </div>
           </AccordionContent>

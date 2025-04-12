@@ -1,9 +1,9 @@
 import { useConnectWallet } from "@/app/context/connectWallet"; 
 
-const ConnectWalletButtonWrapper = ({ children } : { children: React.ReactNode }) => {
+const ConnectWalletButtonWrapper = ({ children, className } : { children: React.ReactNode, className?: string }) => {
   const { setModalOpen } = useConnectWallet();
   return (
-    <div onClick={() => setModalOpen(true)}>
+    <div className={className}  onClick={() => setModalOpen(true)}>
       {children}
     </div>
   );
