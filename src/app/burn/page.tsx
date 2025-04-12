@@ -1,7 +1,8 @@
 "use client";
 
 import DataTable from "@/components/DataTable";
-import { lps, lpsColumn } from "@/lib/dummyData";
+import { v1 } from "@/lib/burn";
+import { lpsColumn } from "@/lib/dummyData";
 import clsx from "clsx";
 import { useState } from "react";
 
@@ -53,8 +54,8 @@ const Burn = () => {
           V2
         </button>
       </div>
-      <div className=" bg-[#1A1D20] rounded-3xl mt-4 border border-white/20  ">
-        <DataTable data={lps} columns={lpsColumn} />
+      <div className=" bg-[#1a1d20] rounded-3xl mt-4 border border-[#323234] ">
+        <DataTable data={v1} columns={lpsColumn} />
       </div>
     </div>
   );

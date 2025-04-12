@@ -1,6 +1,6 @@
 import { ColumnDef } from "@tanstack/react-table";
 import { formatDistanceToNow } from "date-fns";
-
+import { Checkbox } from "@/components/ui/checkbox";
 type TopTokens = {
   price: string;
   priceChange: string;
@@ -22,14 +22,14 @@ type Transactions = {
   time: Date;
   tokenAmount2: string;
 };
-type LPS = {
-  lps: string;
-  value: string;
-  token0Amount: string;
-  token1Amount: string;
-  token2Amount: string;
-  lpAmount: string;
-};
+// type LPS = {
+//   lps: string;
+//   value: string;
+//   token0Amount: string;
+//   token1Amount: string;
+//   token2Amount: string;
+//   lpAmount: string;
+// };
 
 export const topTokens: TopTokens[] = [
   {
@@ -134,30 +134,51 @@ export const transactionsColunm: ColumnDef<Transactions>[] = [
 ];
 export const lpsColumn: ColumnDef<LPS>[] = [
   {
-    accessorKey: "lps",
+    id: "select",
+    header: ({ table }) => (
+      <Checkbox
+        checked={
+          table.getIsAllPageRowsSelected() ||
+          (table.getIsSomePageRowsSelected() && "indeterminate")
+        }
+        onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+        aria-label="Select all"
+      />
+    ),
+    cell: ({ row }) => (
+      <Checkbox
+        checked={row.getIsSelected()}
+        onCheckedChange={(value) => row.toggleSelected(!!value)}
+        aria-label="Select row"
+      />
+    ),
+    enableSorting: false,
+    enableHiding: false,
+  },
+  {
+    accessorKey: "pair",
     header: "LPS",
   },
   {
-    accessorKey: "value",
+    accessorKey: "usd_value",
     header: "USD VALUE",
   },
   {
-    accessorKey: "token0Amount",
+    accessorKey: "token0_amount",
     header: "TOKEN0 AMOUNT",
   },
   {
-    accessorKey: "token1Amount",
+    accessorKey: "token1_amount",
     header: "TOKEN1 AMOUNT",
   },
+  // {
+  //   accessorKey: "token2Amount",
+  //   header: "TOKEN2 AMOUNT",
+  // },
   {
-    accessorKey: "token2Amount",
-    header: "TOKEN2 AMOUNT",
-  },
-  {
-    accessorKey: "lpAmount",
+    accessorKey: "lp_amount",
     header: "LP AMOUNT",
   },
-
 ];
 
 export const topPools: TopPools[] = [
@@ -194,22 +215,30 @@ export const transactions: Transactions[] = [
   },
 ];
 
-export const lps: LPS[] = [
-  {
-    lps: "Swap",
-    value: "$1000",
-    token0Amount: "1000",
-    token1Amount: "1000",
-    token2Amount: "1000",
-    lpAmount: "1000",
-  },
-  {
-    lps: "Swap",
-    value: "$1000",
-    token0Amount: "1000",
-    token1Amount: "1000",
-    token2Amount: "1000",
-    lpAmount: "1000",
-  },
+// export const lps: LPS[] = [
+//   {
+//     lps: "Swap",
+//     value: "$1000",
+//     token0Amount: "1000",
+//     token1Amount: "1000",
+//     token2Amount: "1000",
+//     lpAmount: "1000",
+//   },
+//   {
+//     lps: "Swap",
+//     value: "$1000",
+//     token0Amount: "1000",
+//     token1Amount: "1000",
+//     token2Amount: "1000",
+//     lpAmount: "1000",
+//   },
 
-];
+// ];
+
+export interface LPS {
+  pair: string;
+  usd_value: string;
+  token0_amount: string;
+  token1_amount: string;
+  lp_amount: string;
+}

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/navBar";
+import { ConnectWalletProvider } from "./context/connectWallet";
+import ConnectWalletModal from "@/components/connectWalletModal";
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -32,10 +34,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={` ${roboto.className} font antialiased bg-black `}>
-        <Navbar />
+      <body className={` ${roboto.className} font antialiased  `} >
+        <ConnectWalletProvider>
+          <Navbar />
+          <ConnectWalletModal />
+          <main className="max-w-7xl mx-auto">
 
-        <main className=" mx-4">{children}</main>
+          {children}
+          </main>
+        </ConnectWalletProvider>
       </body>
     </html>
   );
