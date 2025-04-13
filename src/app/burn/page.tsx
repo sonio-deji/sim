@@ -10,27 +10,30 @@ const Burn = () => {
   const [activeTab, setActiveTab] = useState<"v1" | "v2">("v1");
   return (
     <div className=" text-white mt-16 ">
-      <div className=" flex items-center justify-between">
+      <div className=" flex justify-between">
         <div>
-          <p className=" font-bold text-3xl">Burn</p>
-          <p className=" mt-2 font-semibold text-lg">
+          <p className=" font-bold text-3xl text-[#f2f2f2] md:text-[40px]">
+            Burn
+          </p>
+          <p className="  font-semibold text-[#f2f2f2] text-xl mt-5">
             Select LP tokens to buy and burn PLSX
           </p>
         </div>
-        <div className=" rounded-3xl max-w-[360px] w-full p-4 bg-[#1A1D20] ">
+        <div className=" rounded-3xl max-w-[400px] w-full p-6 bg-[#1A1D20] ">
           <div className=" flex items-center justify-between">
-            <p className=" font-semibold text-2xl">Burn PLSX</p>
+            <p className=" font-semibold text-[#fff] text-2xl">Burn PLSX</p>
             <p className=" text-sm">Total PLSX burned 1.33T</p>
           </div>
-          <p className=" text-white/80">Selected USD value: $0.00</p>
-          <p className=" text-white/80 ">Selected USD value: $0</p>
+          <p className=" text-[#ccc]">Selected USD value: $0.00</p>
+          <p className=" text-[#ccc] ">Selected USD value: $0</p>
           <p className=" text-white font-medium">Bounty: 0.00 PLSX/~$0.00</p>
           <button
             style={{
               background:
                 "linear-gradient(45deg, rgb(0, 102, 34), rgb(0, 179, 60))",
+              boxShadow: "rgba(14, 14, 44, 0.4) 0px -1px 0px 0px inset",
             }}
-            className="  text-white mt-3 font-bold rounded-lg px-4 py-2  w-full hover:bg-green-600 transition duration-200"
+            className="  text-white mt-8 h-[48px] font-bold rounded-lg px-4 py-2  w-full hover:bg-green-600 transition duration-200"
           >
             Connect Wallet
           </button>

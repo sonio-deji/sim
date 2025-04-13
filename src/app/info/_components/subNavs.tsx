@@ -13,28 +13,37 @@ const SubNavs = () => {
       <div className=" rounded-lg px-2 border-white/20 gap-3 flex ">
         <Link
           href={`/info/${params.version}`}
-          className={clsx(" font-bold text-lg p-2 rounded-md", {
-            " bg-slate-200 text-black/80": !activePath,
-            "  text-white/80": activePath,
-          })}
+          className={clsx(
+            "  font-bold py-0 px-4 h-[32px] text-lg rounded-[10px] opacity-[1] ",
+            {
+              " bg-[#ccc] text-[#1a1d20]": !activePath,
+              "  text-white/80": activePath,
+            }
+          )}
         >
           Overview
         </Link>
         <Link
           href={`/info/${params.version}/pools`}
-          className={clsx(" font-bold p-2 text-lg rounded-md", {
-            " bg-slate-200 text-black/80": activePath === "pools",
-            " text-white/80": activePath !== "pools",
-          })}
+          className={clsx(
+            " font-bold py-0 px-4 h-[32px] text-lg rounded-[10px] opacity-[1] ",
+            {
+              " bg-[#ccc] text-[#1a1d20]": activePath === "pools",
+              " text-white/80": activePath !== "pools",
+            }
+          )}
         >
           Pools
         </Link>
         <Link
           href={`/info/${params.version}/tokens`}
-          className={clsx(" font-bold p-2 text-lg rounded-md", {
-            " bg-slate-200 text-black/80": activePath === "tokens",
-            " text-white/80": activePath !== "tokens",
-          })}
+          className={clsx(
+            " font-bold py-0 px-4 h-[32px] text-lg rounded-[10px] opacity-[1] ",
+            {
+              "bg-[#ccc] text-[#1a1d20]": activePath === "tokens",
+              " text-white/80": activePath !== "tokens",
+            }
+          )}
         >
           Tokens
         </Link>

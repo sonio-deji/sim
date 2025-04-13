@@ -14,7 +14,7 @@ const VersionNav = () => {
     <div className=" text-white flex flex-row justify-between gap-6 mx-auto max-w-44 w-full ">
       <Link
         className={clsx(" text-lg", {
-          "text-white font-semibold border-b-[4px] pb-2 px-2 rounded-b-sm border-b-[#00B33C]":
+          "text-white font-semibold border-b-[4px] pb-2 px-2  border-b-[#00B33C]":
             activePath === "V1",
           "text-white/80 font-medium": activePath !== "V1",
         })}
@@ -24,7 +24,7 @@ const VersionNav = () => {
       </Link>
       <Link
         className={clsx(" text-lg", {
-          "text-white font-semibold border-b-[4px] pb-2 px-2 rounded-b-sm border-b-[#00B33C]":
+          "text-white font-semibold border-b-[4px] pb-2 px-2  border-b-[#00B33C]":
             activePath === "V2",
           "text-white/80 font-medium": activePath !== "V2",
         })}
@@ -34,7 +34,7 @@ const VersionNav = () => {
       </Link>
       <Link
         className={clsx(" text-lg", {
-          "text-white font-semibold border-b-[4px] pb-2 px-2 rounded-b-sm border-b-[#00B33C]":
+          "text-white font-semibold border-b-[4px] pb-2 px-2  border-b-[#00B33C]":
             activePath === "stable",
           "text-white/80 font-medium": activePath !== "stable",
         })}

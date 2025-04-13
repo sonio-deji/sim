@@ -7,7 +7,7 @@ const Pools = () => {
   return (
     <div>
       <p className=" font-bold text-2xl text-white">Your Watchlist</p>
-      <div className=" bg-[#1A1D20]  text-white py-2.5 text-sm font-semibold px-4 rounded-3xl mt-5">
+      <div className=" bg-[#1A1D20]  text-white p-5 text-sm font-semibold px-4 rounded-3xl mt-5">
         Saved pools will appear here
       </div>
       <div className=" mt-8 w-full">

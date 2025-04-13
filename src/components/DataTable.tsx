@@ -83,9 +83,9 @@ export function DataTable<TData, TValue>({
         </TableBody>
       </Table>
       <div className="w-full py-2 text-[#f2f2f2] border-t border-t-[#323234] mx-auto  flex items-center justify-center">
-        <ArrowLeft className="" />
-        <span className="px-6">page 1 0f 1</span>
-        <ArrowRight />
+        <ArrowLeft className=" size-4" />
+        <span className="px-6">page 1 of 1</span>
+        <ArrowRight className=" size-4" />
       </div>
     </div>
   );
